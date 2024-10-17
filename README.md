@@ -1,3 +1,14 @@
+## Integrantes
+
+| N  | Nombre                   |
+|----|--------------------------|
+| 1  | Mónica Carvajal Romero   |
+| 2  | Patricio Hernández Pavez |
+| 3  | Paula Rivera Oberg       |
+| 4  | Valentina Loyola Rodó    |
+| 5  | Nicolas Gonzalez         |
+| 6  | Nicolás Aravena          |
+
 ## Contenido
 
 ### Módulo 1: Orientación al perfil y metodología del curso.
