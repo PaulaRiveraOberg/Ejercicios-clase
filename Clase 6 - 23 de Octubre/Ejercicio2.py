@@ -3,9 +3,10 @@ import geopy.distance
 
 class Position:
     def __init__(self, latitud, longitud, altitud):
-        if type(latitud) or type(longitud) or type(altitud) == str: 
-            raise TypeError("Wrong type of data type.")
 
+        if type(latitud) == str or type(longitud) == str or type(altitud) == str: 
+            raise TypeError("Wrong type of data type.")
+        
         if latitud < -90 or latitud > 90:
             raise ValueError("Latitude out of range!")
         
@@ -13,8 +14,12 @@ class Position:
 
         if longitud < -180 or longitud > 180:
             raise ValueError("Longitude out of range!")
-    
+        
         self.longitud = longitud
+
+        if altitud < 0:
+            raise ValueError("Altitude cannot be negative!")
+        
         self.altitud = altitud
     
     def repr_string(self):
@@ -41,13 +46,13 @@ class Distance:
 
 # Creo un objeto desde la clase Position forzando el error por escribir una latitud fuera del rango de valores.
 # TEST 1
-# try:
-#     posicion = Position(-91, -70.64827, 1000)
-# except ValueError as e:
-#     print(e)
+try:
+    posicion = Position(-20, -70.64827, -2)
+except ValueError as e:
+    print(e)
 
 # TEST 2
-try: 
-    concepcion = Position('perro', -20, 1000)
-except Exception as e:
-    print(f"Error: {e}")
+# try: 
+#     concepcion = Position(40, "-20", 1000)
+# except Exception as e:
+#     print(f"Error: {e}")
