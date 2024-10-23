@@ -46,6 +46,7 @@ class Distance:
 # except ValueError as e:
 #     print(e)
 
+# TEST 2
 try: 
     concepcion = Position('perro', -20, 1000)
 except Exception as e:
