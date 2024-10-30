@@ -24,5 +24,5 @@ print(personas)
 
 personas["imc"] = personas["peso"] / (personas["altura"] ** 2)
 
-personas["rango_edad"] = personas.apply(lambda x: "Mayor de 60" if (x["edades"] >= 60) else "Mayor de 30" if (x["edades"] >= 30) else "Menor de 30")
+personas["rango_edad"] = personas.apply(lambda x: "Mayor de 60" if (x["edades"] >= 60) else "Mayor de 30" if (x["edades"] >= 30) else "Menor de 30", axis=1)
 print(personas)
