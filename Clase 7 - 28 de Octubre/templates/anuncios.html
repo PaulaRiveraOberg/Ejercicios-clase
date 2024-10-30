@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Anuncios</title>
+</head>
+<body>
+    <h1>Anuncios</h1>
+    
+    <a href="{{ url_for('anuncio') }}">Publicar Nuevo Anuncio</a>
+
+    {% if anuncios %}
+        <ul>
+            {% for anuncio in anuncios %}
+                <li class="{{ anuncio.prioridad }}">
+                    <h2>{{ anuncio.titulo }}</h2>
+                    <p>{{ anuncio.contenido }}</p>
+                    <p>Prioridad: {{ anuncio.prioridad.capitalize() }}</p>
+                    <p>Fecha: {{ anuncio.fecha }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay anuncios publicados.</p>
+    {% endif %}
+</body>
+</html>

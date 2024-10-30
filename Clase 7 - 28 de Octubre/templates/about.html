@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Acerca de {{ grupo }}</title>
+</head>
+<body>
+    <h1>Acerca de {{ grupo }}</h1>
+    <p>{{ objetivo }}</p>
+    
+    <h2>Integrantes:</h2>
+    <ul>
+        {% for integrante in integrantes %}
+            <li>
+                <a href="{{ url_for('perfil', nombre=integrante.nombre, edad=integrante.edad, profesion=integrante.profesion) }}">
+                    {{ integrante.nombre }} ({{ integrante.profesion }})
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    
+    <footer>
+        <p>Fecha y hora actuales: {{ fecha_hora }}</p>
+    </footer>
+</body>
+</html>
